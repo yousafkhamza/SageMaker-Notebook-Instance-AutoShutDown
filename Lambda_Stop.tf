@@ -12,7 +12,7 @@ resource "aws_lambda_function" "sagemaker_stop_lambda_function" {
   filename      = data.archive_file.stop_lambda_zip.output_path
   function_name = "sagemaker-stop-lambda-function"
   role          = aws_iam_role.lambda_iam_role_terraform.arn
-  description   = "This lambda using to stop the sagemaker instance which we mentioned"
+  description   = "This lambda using to stop the sagemaker instance which we used AutoStop tag"
   handler       = "lambda_function.lambda_handler"
   runtime       = local.runtime_lambda_function
   timeout       = 60
